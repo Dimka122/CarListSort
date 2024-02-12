@@ -90,49 +90,51 @@ useEffect(() => {
 [selectedBrand, selectedYear]);
 
   return (
-    <div className="brand-filter">
-  <div>Filter by Brand :</div>
-  <select
-    id="brand-input"
-    value={selectedBrand}
-    onChange={handleBrandChange}
-  >
-    <option value="">All</option>
-    <option value="BMW">BMW</option>
-    <option value="VW">VW</option>
-    <option value="Audi">Audi</option>
-  </select>
-</div>
-<div>Filter by Year</div>
-<div id="year-options" onClick={handleYearChange}>
-  <div
-    className={selectedYear === 2018 ? "active-option" : "filter-option"}
-    id="2018"
-  >
-    2018
-  </div>
-  <div
-    className={selectedYear === 2019 ? "active-option" : "filter-option"}
-    id="2019"
-  >
-    2019
-  </div>
-  <div
-    className={selectedYear === 2020 ? "active-option" : "filter-option"}
-    id="2020"
-  >
-    2020
-  </div>
-</div>
+    <div className="App">
+      <div className="brand-filter">
+        <div>Filter by Brand :</div>
+        <select
+          id="brand-input"
+          value={selectedBrand}
+          onChange={handleBrandChange}
+        >
+          <option value="">All</option>
+          <option value="BMW">BMW</option>
+          <option value="VW">VW</option>
+          <option value="Audi">Audi</option>
+        </select>
+      </div>
+      <div>Filter by Year</div>
+      <div id="year-options" onClick={handleYearChange}>
+        <div
+          className={selectedYear === 2018 ? "active-option" : "filter-option"}
+          id="2018"
+        >
+          2018
+        </div>
+        <div
+          className={selectedYear === 2019 ? "active-option" : "filter-option"}
+          id="2019"
+        >
+          2019
+        </div>
+        <div
+          className={selectedYear === 2020 ? "active-option" : "filter-option"}
+          id="2020"
+        >
+          2020
+        </div>
+      </div>
 
-    <div id="car-list">
-      {filteredList.map((item, index) => (
-         <div className="car-item" key={index}>
-           <div className="car-name">{`Name: ${item.name}`}</div>
-           <div className="car-year">{`Year: ${item.release_year}`}</div>
-           <img className="car-image" src={item.url} alt="car-img" />
-         </div>
-      ))}
+      <div id="car-list">
+        {filteredList.map((item, index) => (
+          <div className="car-item" key={index}>
+            <div className="car-name">{`Name: ${item.name}`}</div>
+            <div className="car-year">{`Year: ${item.release_year}`}</div>
+            <img className="car-image" src={item.url} alt="car-img" />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
