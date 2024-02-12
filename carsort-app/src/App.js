@@ -41,6 +41,18 @@ export default function App() {
   // Selected Year filter
   const [selectedYear, setSelectedYear] = useState();
 
+  const filterByBrand = (filteredData) => {
+    // Avoid filter for empty string
+    if (!selectedBrand) {
+      return filteredData;
+    }
+  
+    const filteredCars = filteredData.filter(
+      (car) => car.name.split(" ").indexOf(selectedBrand) !== -1
+    );
+    return filteredCars;
+  };
+
   return (
     <div id="car-list">
       {filteredList.map((item, index) => (
