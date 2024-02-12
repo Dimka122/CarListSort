@@ -33,5 +33,23 @@ export default function App() {
         release_year: 2019
       }
     ];
-  
+      // List of all cars satisfing all the filters
+  const [filteredList, setFilteredList] = useState(carList);
+
+  // Selected Brand name filter
+  const [selectedBrand, setSelectedBrand] = useState("");
+  // Selected Year filter
+  const [selectedYear, setSelectedYear] = useState();
+
+  return (
+    <div id="car-list">
+      {filteredList.map((item, index) => (
+         <div className="car-item" key={index}>
+           <div className="car-name">{`Name: ${item.name}`}</div>
+           <div className="car-year">{`Year: ${item.release_year}`}</div>
+           <img className="car-image" src={item.url} alt="car-img" />
+         </div>
+      ))}
+    </div>
+  );
 }
