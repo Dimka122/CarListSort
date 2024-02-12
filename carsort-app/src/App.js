@@ -65,6 +65,23 @@ export default function App() {
     return filteredCars;
   };
 
+  // Update seletedBrand state
+const handleBrandChange = (event) => {
+  setSelectedBrand(event.target.value);
+};
+
+// Toggle seletedYear state
+const handleYearChange = (event) => {
+  const inputYear = Number(event.target.id);
+
+  if (inputYear === selectedYear) {
+    setSelectedYear("");
+  } 
+  else {
+    setSelectedYear(inputYear);
+  }
+};
+
   return (
     <div id="car-list">
       {filteredList.map((item, index) => (
