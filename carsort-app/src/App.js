@@ -53,6 +53,18 @@ export default function App() {
     return filteredCars;
   };
 
+  const filterByYear = (filteredData) => {
+    // Avoid filter for null value
+    if (!selectedYear) {
+      return filteredData;
+    }
+
+    const filteredCars = filteredData.filter(
+      (car) => car.release_year === selectedYear
+    );
+    return filteredCars;
+  };
+
   return (
     <div id="car-list">
       {filteredList.map((item, index) => (
