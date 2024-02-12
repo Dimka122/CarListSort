@@ -82,6 +82,13 @@ const handleYearChange = (event) => {
   }
 };
 
+useEffect(() => {
+  var filteredData = filterByBrand(carList);
+  filteredData = filterByYear(filteredData);
+  setFilteredList(filteredData);
+}, 
+[selectedBrand, selectedYear]);
+
   return (
     <div className="brand-filter">
   <div>Filter by Brand :</div>
