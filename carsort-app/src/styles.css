@@ -5,6 +5,7 @@
     align-items: center;
     height: 100vh;
     font-size: 20px;
+    background-color: #6d91a8;
   }
   #year-options {
     display: flex;
